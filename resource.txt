@@ -1,0 +1,4 @@
+Anilist:
+To get query structure and exactly what you want 
+https://anilist.co/graphiql?utm_source=chatgpt.com
+
