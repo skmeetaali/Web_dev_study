@@ -25,5 +25,6 @@ bucket = basket(100)
 bucket.addItem("cake", 45)
 bucket.addItem("flower", 25)
 bucket.addItem("ribbon", 35)
+bucket.addItem("ribbon", 35)
 
 bucket.print()
