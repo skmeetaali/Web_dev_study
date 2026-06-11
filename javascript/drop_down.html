@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data attributes</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelector('select').onchange = function() {
+                document.querySelector('#hello').style.color = this.value;
+            };
+
+        });
+    </script>
+    
+</head>
+
+<body>
+    <h1 id="hello">
+        Hello,World!
+    </h1>
+
+    <select name="" id="">
+        <option value="black">Black</option>
+        <option value="lightblue">lightblue</option>
+        <option value="purple">purple</option>
+        <option value="orange">orange</option>
+
+    </select>
+
+</body>
+
+</html>

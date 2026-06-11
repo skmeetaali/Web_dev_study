@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change css</title>
+    <script>
+        function change_color(color) {
+            document.querySelector('#hello').style.color = color;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('#red').onclick = () =>  change_color("red");
+            document.querySelector('#green').onclick =  () =>  change_color("green");
+            document.querySelector('#yellow').onclick =  () =>  change_color("yellow");
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="hello">
+        Hello,World!
+    </h1>
+
+    <button id="red">REd</button>
+    <button id="green">Green</button>
+    <button id="yellow">Yellow</button>
+</body>
+
+</html>
