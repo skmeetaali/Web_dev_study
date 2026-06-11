@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing image</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+
+        function change_image() {
+
+            const images = [
+                "./images/cat_gang.jpg",
+                "./images/city_beach.jpg",
+                "./images/panda_gang.jpg",
+                "./images/spirited away.jpg",
+                "./images/your_name.jpg",
+                "./images/totoro.jpg",
+            ];
+            if (!localStorage.getItem('current_img')) {
+                localStorage.setItem('current_img', 0);
+            }
+
+            const container = document.querySelector('.container-fluid');
+            let current = localStorage.getItem('current_img');
+
+            if (current >= images.length - 1) {
+                current = 0;
+            } else {
+                current++;
+            }
+
+            localStorage.setItem('current_img', current);
+            container.style.backgroundImage = `url('${images[current]}')`;
+            console.log(images.length, current);
+        }
+        
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setInterval(change_image, 2000);
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="main_div">
+            <h1>
+                HELLO
+            </h1>
+        </div>
+    </div>
+</body>
+
+</html>

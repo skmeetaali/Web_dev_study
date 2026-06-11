@@ -1,0 +1,32 @@
+.container-fluid{
+    background-image: url('./images/cat_gang.jpg');
+    background-size: cover;
+    height: 100vh;  
+    text-align: center;
+    transition: background-image 0.5s ease-out;
+}
+
+.main_div{
+    width:80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    top: 10%;
+    left: 10%;
+}
+
+.main_div > h1{
+    color: white;
+    text-shadow: 5px rgb(255, 255, 255);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 300px;
+    position: relative;
+    top: 20%;
+}
+
+#change_image {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
