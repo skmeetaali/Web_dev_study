@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>characters</title>
+
+    <script>
+
+        function show_page(page) {
+            document.querySelectorAll('.character').forEach(div => {
+                div.style.display = 'none';
+            })
+            document.querySelector(`#${page}`).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('button').forEach(button => {
+                button.onclick = function () {
+                    show_page(this.dataset.page);
+                }
+            })
+        })
+
+    </script>
+
+    <style>
+        #body {
+            display: flex;
+            float: row;
+            flex-wrap: wrap;
+        }
+
+        #selectbuttons {
+            width: 20%;
+            height: 100vh;
+            background-color: black;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #selectbuttons>button {
+            width: 90%;
+            height: 45px;
+            border: none;
+            background-color: rgb(33, 33, 34, 0.7);
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            margin: 5px auto;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
+
+        #selectbuttons>button:hover {
+            background-color: rgb(148, 148, 158);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        #selectbuttons>h2 {
+            color: rgb(248, 193, 75);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+            margin-top: 20px;
+        }
+
+        #selectbuttons>img {
+            width: 90%;
+            position: relative;
+            left: 5%;
+        }
+
+        #characters {
+            width: 80%;
+        }
+
+        .character {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .character>div {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.53);
+            min-height: 100vh;
+        }
+
+        .character>div>h1 {
+            font-size: 100px;
+            color: rgb(230, 182, 72);
+            text-shadow: 8px 2px 4px rgb(247, 10, 10);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-top: 20px;
+            margin: 0;
+        }
+
+        .character>div>p {
+            font-size: 25px;
+            color: white;
+            position: relative;
+            top: 20%;
+            padding: 0 70px 0 70px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+
+
+        #demon-slayer {
+            background-image: url('https://www.pluggedin.com/wp-content/uploads/2023/03/demon-slayer.jpg');
+            display: block;
+        }
+
+        #muichiro {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/e/e5/Muichiro_with_his_Demon_Slayer_Mark.png/revision/latest/scale-to-width-down/1000?cb=20230529024101');
+            background-color: rgb(33, 33, 34, 0.7);
+        }
+
+        #tomioka {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/25/Giyu_appears_in_front_of_Tanjiro.png/revision/latest/scale-to-width-down/1000?cb=20211205103226')
+        }
+
+        #tanjiro {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/a/a9/Tanjiro%27s_sad_smile_at_Kazumi%27s_words.png/revision/latest/scale-to-width-down/1000?cb=20220126004340');
+        }
+
+        #zenitsu {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5b/Zenitsu_taking_stand_for_his_technique.png/revision/latest/scale-to-width-down/1000?cb=20190622170033');
+        }
+
+        #nezuko {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/7/7f/Nezuko_addresses_Zenitsu_as_Inosuke.png/revision/latest/scale-to-width-down/1000?cb=20240517052144');
+        }
+
+        #inosuke {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/05/Inosuke_preparing_to_fight_the_demon.png/revision/latest/scale-to-width-down/1000?cb=20190615165420');
+        }
+
+        #yorichi {
+            background-image: url('https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/08/Yoriichi_Tsugikuni_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230411022113');
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="body">
+        <div id="selectbuttons">
+
+            <h2>Select Your Character</h2>
+            <button data-page="demon-slayer">Demon slayer</button>
+            <button data-page="tanjiro">Tanjiro Kamado</button>
+            <button data-page="nezuko">Nezuko Kamado</button>
+            <button data-page="zenitsu">Zenitsu</button>
+            <button data-page="inosuke">Inosuku</button>
+            <button data-page="tomioka">Tomioka giyu</button>
+            <button data-page="yorichi">Yorichi</button>
+            <button data-page="muichiro">Muichiro</button>
+
+            <img src="https://images.wallpapersden.com/image/download/nezuko-kamado-cute-demon-slayer_bmZuZW6UmZqaraWkpJRnbmZnrWZraGc.jpg"
+                alt="nezuko">
+
+        </div>
+
+        <div id="characters">
+
+            <div id="demon-slayer" class="character">
+                <div>
+
+                    <h1>Demon Slayer</h1>
+
+                    <p>
+                        Setting
+                        In Taishō era Japan, a secret organization known as the "Demon Slayer Corps" has waged a war
+                        against
+                        demons for centuries. Demons are former humans who possess supernatural abilities such as
+                        enhanced
+                        strength, rapid regeneration, and unique powers referred to as "Blood Demon Arts". Demons can
+                        only
+                        be killed if they are exposed to direct sunlight, decapitated with weapons crafted from an alloy
+                        called Nichirin, or injected with a poison extracted from wisteria flowers.
+
+                        In contrast, the Demon Slayers are entirely human but employ specialized elemental breathing
+                        techniques known as "Breathing Styles". These techniques grant them superhuman strength,
+                        heightened
+                        abilities, and increased resilience that enable them to fight demons effectively. The most
+                        formidable Demon Slayers are known as the "Hashira" and gain this title through multiple
+                        advancements in the Corps' ranks, culminating in killing fifty demons at the highest level or a
+                        member of the Twelve Kizuki.
+                    </p>
+
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/375c6195-b4aa-4873-af55-467b76efadfa/dg08u4p-a71d48e3-efc6-41fc-b997-45065ae207ae.jpg/v1/fill/w_1920,h_2716,q_75,strp/fan_r__tokito_muichiro_by_raze916_dg08u4p-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjcxNiIsInBhdGgiOiJcL2ZcLzM3NWM2MTk1LWI0YWEtNDg3My1hZjU1LTQ2N2I3NmVmYWRmYVwvZGcwOHU0cC1hNzFkNDhlMy1lZmM2LTQxZmMtYjk5Ny00NTA2NWFlMjA3YWUuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.QxqshrYQvM_2jX5xfBrT7Aq9rpcoB--ZWiLuzCTNSC0"
+                        alt="" style="width: 250px;float: right;margin: 40px;">
+
+                    <p>
+                        Plot
+                        Main article: List of Demon Slayer: Kimetsu no Yaiba characters
+                        Tanjiro Kamado is a kind-hearted and diligent boy who lives with his family in the mountains.
+                        After
+                        the death of his father, he becomes the sole provider for his household, selling charcoal in
+                        nearby
+                        villages. He returns home one day to discover his family has been slaughtered by a demon. His
+                        younger sister, Nezuko, is the only survivor, though she has been transformed into a demon
+                        herself.
+                        She exhibits the unusual trait of retaining some human emotion and cognition. The pair are
+                        discovered by Giyu Tomioka, the Water Hashira of the Demon Slayer Corps, who sends Tanjiro to be
+                        trained by his own former mentor, Sakonji Urokodaki. Tanjiro vows to become a Demon Slayer to
+                        avenge
+                        his family and find a way to return Nezuko to humanity.
+
+                        After mastering the "Water Breathing" swordsmanship style, Tanjiro passes the Corps' final
+                        selection. Nezuko, who has been placed under a hypnotic suggestion by Urokodaki to suppress her
+                        demonic urges, accompanies him. During a mission in Asakusa, they encounter Muzan Kibutsuji, the
+                        progenitor of all demons and the one responsible for the murder of their family. They also
+                        befriend
+                        Tamayo and her assistant Yushiro, two demons who have freed themselves from Muzan's control.
+                        Tamayo
+                        agrees to develop a cure for Nezuko, a process that requires blood from the powerful Twelve
+                        Kizuki,
+                        Muzan's most elite subordinates.
+
+                        Tanjiro and Nezuko are joined in their mission by fellow Demon Slayers Zenitsu Agatsuma and
+                        Inosuke
+                        Hashibira. Together, they defeat several members of the Twelve Kizuki. During a fierce battle,
+                        Tanjiro awakens a mysterious and powerful swordsmanship technique known as "Hinokami Kagura".
+                        Their
+                        actions draw the attention of the Hashira, the Corps' highest-ranking swordsmen, and they are
+                        brought before the organization's leader, Kagaya Ubuyashiki. He sanctions their continued
+                        partnership, believing the siblings are pivotal to defeating Muzan.
+
+                        Muzan, enraged by the failures of his remaining Lower Ranks, executes all of them except for
+                        Lower
+                        One, who he sends to kill Tanjiro. After a battle aboard a moving train, Tanjiro prevails with
+                        the
+                        aid of the Flame Hashira, Kyojuro Rengoku, who is subsequently killed by the Upper Three demon,
+                        Akaza. The group continues their campaign, assisting the Sound Hashira in defeating the Upper
+                        Six
+                        siblings and later helping the Mist and Love Hashira eliminate Upper Five and Upper Four at the
+                        Swordsmith Village. During these events, Nezuko develops an immunity to sunlight, making her the
+                        key
+                        to Muzan's goal of overcoming his own fatal weakness. Tanjiro also learns that his Hinokami
+                        Kagura
+                        is derived from "Sun Breathing," the original swordsmanship style created by Breathing
+                        progenitor
+                        Yoriichi Tsugikuni.
+
+                        The Demon Slayer Corps prepares for a final confrontation as Tamayo works on a serum. Muzan
+                        launches
+                        a preemptive assault, prompting Kagaya to sacrifice himself in a suicide attack. The Hashira
+                        engage
+                        Muzan, but he traps them within the Infinity Castle, where they must battle the remaining Upper
+                        Ranks. Through great sacrifice, the demons Akaza, Doma, and Kokushibo are defeated. Muzan kills
+                        Tamayo but is severely weakened by the poison she implanted in him. Forced above ground, a
+                        desperate
+                        battle ensues as the remaining Demon Slayers fight to hold him until sunrise. Though most of the
+                        Hashira perish, Tanjiro delivers the final blow. With his last breath, Muzan transforms Tanjiro
+                        into
+                        a demon, but Nezuko, now fully human, helps reverse the transformation.
+
+                        In the aftermath of Muzan's defeat, all demons under his control perish. The Demon Slayer Corps
+                        is
+                        disbanded, with only two of the active Hashira surviving. Tanjiro and Nezuko return to their
+                        mountain home, their journey finally complete. In the ensuing years, Tanjiro marries Kanao
+                        Tsuyuri,
+                        Inosuke weds Aoi Kanzaki, and Zenitsu marries Nezuko. In a modern-day epilogue, their
+                        descendants
+                        and reincarnations live in a world free from demons.
+                    </p>
+
+                    <p>
+                        Production
+                        After Gotouge's previous manga, Haeniwa no Zigzag, published in Weekly Shōnen Jump in 2015,
+                        failed
+                        to become a serialized work, Tatsuhiko Katayama, Gotouge's first editor, suggested Gotouge to
+                        start
+                        a series with an "easy-to-understand theme".[5] Gotouge's debut work Kagarigari would become the
+                        basis for an initial draft, titled Kisatsu no Nagare (鬼殺の流れ) since it had concepts like swords
+                        and
+                        demons, which would be familiar to the Japanese audience.[5] However, due to its serious tone,
+                        lack
+                        of comic relief, and dark story, this draft was not accepted for serialization, so Katayama
+                        asked
+                        Gotouge to try writing a brighter, more average character in the same setting.[5] The original
+                        title
+                        was Kisatsu no Yaiba (鬼殺の刃), but they felt the character satsu (殺; lit. 'kill') in the title was
+                        too
+                        overt. Although it is a made-up word, "kimetsu" (鬼滅) seemed easy to understand, so Gotouge
+                        thought
+                        it would be interesting to abbreviate the series' title that way; the word yaiba (刃;
+                        lit. 'blade')
+                        implies a Japanese sword.[5]
+
+                        According to Gotouge, the series' three biggest influences are JoJo's Bizarre Adventure, Naruto,
+                        and
+                        Bleach.[6] Gotouge also drew inspiration from Gintama for the comedy scenes.[7] The series'
+                        first
+                        editor, Tatsuhiko Katayama, stated that Tanjiro was partially influenced by Himura Kenshin, the
+                        protagonist of Rurouni Kenshin.[5][8]
+                    </p>
+
+                    <p>
+                        Manga
+                        Further information: List of Demon Slayer: Kimetsu no Yaiba chapters
+                        Written and illustrated by Koyoharu Gotouge, Demon Slayer: Kimetsu no Yaiba was serialized in
+                        Shueisha's shōnen manga magazine Weekly Shōnen Jump from February 15, 2016, to May 18,
+                        2020.[9][10]
+                        Shueisha collected its chapters in 23 individual tankōbon volumes, released from June 3, 2016,
+                        to
+                        December 4, 2020.[11][12]
+
+                        Shueisha simultaneously published the series in English on the Manga Plus service starting in
+                        January 2019.[13] Viz Media published the first three chapters in its digital magazine Weekly
+                        Shonen
+                        Jump as part of the "Jump Start" program.[14][15] During their panel at San Diego Comic-Con on
+                        July
+                        20, 2017, Viz announced that they had licensed the manga for the North American market.[15] The
+                        first volume was released on July 3, 2018.[16]
+                    </p>
+                </div>
+            </div>
+
+            <div id="muichiro" class="character">
+                <div>
+                    <h1>
+                        MUICHIRO TOKITO
+                    </h1>
+                    <p>
+                        Muichiro is a boy of fair skin complexion, short stature, and a lean-muscular build, being
+                        described
+                        as
+                        thinner and smaller than Tanjiro, but deceptively strong.[4] He has straight, waist-length hair,
+                        transitioning from raven-black to turquoise. He wears his hair loose with two clumps protruding
+                        slightly
+                        from each side of his head, a set of marginally shorter hair left down to frame his face, and
+                        unruly
+                        bangs
+                        over his forehead. He also possesses large, empty-looking turquoise irises with a teal center.
+                        He is
+                        identical in appearance to his older twin brother Yuichiro.
+                    </p>
+                    <p>
+                        Following his meeting with Tanjiro Kamado, and the return of his childhood memories, Muichiro's
+                        once
+                        empty
+                        looking eyes seem to now have a hopeful glimmer that is accompanied with a more upbeat and
+                        cheery
+                        expression, reminiscent of his former demeanor before the death of Yuichiro.
+
+                        Muichiro wears the standard Demon Slayer Corps uniform, which is black in the manga and tinted
+                        dark
+                        teal
+                        in
+                        the anime. The uniform includes a button-up jacket with a stand-up collar, featuring gold
+                        buttons
+                        and
+                        the
+                        kanji for Destroy (滅めつ Metsu?) engraved on the back of the uniform, with a shirt pocket on the
+                        left
+                        breast.
+                        Beneath the jacket, he wears a white long-sleeved collared undershirt, though not visible.
+                        However,
+                        unlike
+                        the standard shirt-like cuffed sleeves, Muichiro’s uniform has longer, looser sleeves that are
+                        more
+                        reminiscent of a kimono, adding a flowing, ethereal quality to his appearance. Instead of the
+                        typical
+                        tattsuke-hakama pants wrapped with kyahan, Muichiro wears his hakama in the umanori style—a more
+                        traditional, horseback-riding cut—which, combined with his oversized sleeves, gives his entire
+                        outfit a
+                        loose and oversized silhouette. His uniform is fastened at the waist with a white belt. For
+                        footwear, he
+                        wears dark teal tabi socks and a pair of white zōri sandals with teal straps.
+                    </p>
+                    <p>
+                        When Muichiro was young, he wore a sleeveless yukata that was cyan with a mist design, similar
+                        to
+                        the
+                        darker
+                        one his brother wore when they were both ten.
+
+                        Due to Tanjiro's presence around him, Muichiro manifested his Demon Slayer Mark during the
+                        battle
+                        against
+                        Upper Rank Five, Gyokko. Muichiro's mark is blood red coloured, resembling mist shaped clouds on
+                        both
+                        his
+                        cheeks and the left side of his forehead.[5]
+                    </p>
+
+                    </p>
+                </div>
+            </div>
+
+            <div id="tanjiro" class="character">
+                <div>
+
+                    <h1>KAMADO TANJIRO</h1>
+
+                    <p>
+                        Tanjiro is a young man of average height with lightly tanned skin and an athletic, muscular
+                        build. His hair is ruffled and black with red tips (appearing black that turns to burgundy at
+                        the tips in the anime), and is swept back to reveal his forehead. His eyes are wide and dark
+                        red, fading into a burgundy hue with white pupils that appear lighter toward the lower section
+                        of the iris, while the upper portion is markedly darker. He bears a distinct scar on the upper
+                        left of his forehead, first seen when his mother took him to watch his father perform the
+                        Hinokami Kagura dance. Originally, it was a light pink, patch-like mark — an injury he received
+                        after saving one of his siblings from a hot brazier. It remained so until his battle with the
+                        Hand Demon during Final Selection, after which it developed into a dark red, jagged mark. Later,
+                        during Hashira Training, it transformed once more into a true, permanent flame-like pattern —
+                        his Demon Slayer Mark. It is also noted that Tanjiro’s hands are unusually rough for someone his
+                        age, a testament to the grueling training he endured under Sakonji Urokodaki. In appearance,
+                        Tanjiro closely resembles his ancestor Sumiyoshi, sharing the same facial features, eyes, and
+                        hairstyle — though Sumiyoshi’s hair was longer, reaching shoulder-length, and tied back into a
+                        ponytail.
+                        <br>
+                        Tanjiro first appears wearing a checkered, black-and-biscay-green haori over a white robe and
+                        black pants. He occasionally sports a turquoise scarf and is seen with circular, white bands
+                        looped around his calves. He also wears a distinct pair of hanafuda-like earrings with the image
+                        of the rising, red sun over a mountain. His hair is also kept tied back in a small ponytail or
+                        bun; as he trains with Sabito and Makomo, his hair grows to his shoulders.
+                        <br>
+                        During Final Selection, Tanjiro wears a blue, cloud-patterned samue-styled kimono and black
+                        pants, nearly identical to Sakonji's outfit. He still wears his earrings, but his hair is cut
+                        extremely short and has remained the same length since. Similar to the rest of the apprentices
+                        that were trained under Sakonji, Tanjiro wears a hand-carved fox mask crafted by his master on
+                        the left side of his head. The mask has red accents on the eyes, ears, and spots on each corner
+                        of its mouth. On the upper right corner of the mask, there is a sun-shaped design that likely
+                        symbolizes the scar on his forehead.
+                        <br>
+                        After becoming a Demon Slayer, Tanjiro wears the standard Demon Slayer uniform that is similar
+                        to the Japanese military uniforms of the Taishō era. His uniform is black in the manga and
+                        tinted a mahogany hue, a reddish-brown color tone, in the anime. It consists of a button-up
+                        jacket with a stand-up collar and long sleeves, featuring silver buttons and a shirt pocket on
+                        the left breast, with the kanji for Destroy (滅めつ Metsu?) engraved on the back of the uniform.
+                        Beneath the jacket, he wears a white long-sleeved collared undershirt. The uniform also includes
+                        tattsuke-hakama pants tucked, fastened with a white belt around his waist, and strapped securely
+                        around his calves with a pair of buttoned white kyahan, along with tabi socks that match the
+                        color of his uniform. On his feet, he wears a pair of white zōri sandals with dark red straps.
+                        Over this, he dons his signature checkered haori. He carries a large wooden box on his back
+                        (which was a gift to him from Sakonji Urokodaki), where his sister sleeps as they travel during
+                        the day.
+                    </p>
+                </div>
+            </div>
+
+            <div id="nezuko" class="character">
+
+                <div>
+                    <h1>KAMADO NEZUKO</h1>
+                    <p>
+                        Nezuko is a young girl with fair skin, visibly large, prominent fangs, a slender build, and
+                        sharp, stiletto nails with a base color of light pink and ombre fading to a red-orange color at
+                        the end where they point. Her hair is long, black, and wavy. It reaches just below her waist,
+                        turning a flame-orange color as it passes her elbows, and appears to be crimped into large,
+                        straight ridges, worn side-swept drastically to her left. She has soft-looking, pink eyes that
+                        appear a lighter color around the rims of their irises and a persian pink center; they slanted
+                        downwards toward the sides of her face and framed by notably long eyelashes. In the manga,
+                        Nezuko can sometimes be shown with more than one bow. According to Tanjiro, Nezuko was known as
+                        a great beauty in their home town.[5]
+                        <br>
+                        She wears a light pink, short-sleeve kimono with an asanoha (hemp leaf) pattern, the lining a
+                        paler pink layered with the white wavy yuban underneath as a medium-length trailing skirt kimono
+                        to freely move as a demon; this, the white clothes lowly cover her knees then goes down to
+                        almost her ankles making a open window, secured by a red and white-chequered hanhaba obi with an
+                        orange-threaded obijime and a green obiage. Over this, she sports a long, dark-brown haori that
+                        reaches her calves, as well as a pair of zōri with pink straps and white tabi socks, wrapped
+                        with thick pieces of black material resembling kyahan. Nezuko also wears a small pink ribbon on
+                        the left side of her head to keep her hair out of her face, along with the bamboo muzzle Giyu
+                        Tomioka gave her,[6] which is secured around her jaw with a strip of red cloth.
+                        <br>
+                        When Nezuko transforms into her awakened form during her fight with Daki, she has a bigger,
+                        taller, and more curvaceous body with longer hair that reaches to her feet. She loses her bamboo
+                        muzzle and her right footwear, as well as the sleeves of her kimono. She grows a short white
+                        horn on the right side of her forehead, designed with an irregular crack pattern, along with
+                        vein-like patterns in her forehead near her horn. She has a vein-like pattern around her left
+                        eye, but her most striking new feature is the red and green vine-like pattern that covers her
+                        skin, circling around her arms, legs, and chest, as well a black, cat-like slit pupils along
+                        with crack-like patterns around the rim of her irises.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="zenitsu" class="character">
+                <div>
+
+                    <h1>ZENITSU AGATSUMA</h1>
+
+                    <p>
+                        Zenitsu is cowardly, pessimistic, weak-willed, insecure and anxious, often claiming that he
+                        doesn't have long to live due to the dangerous job of being a Demon Slayer. He has rather low
+                        self-esteem despite his talent and strength, even considering himself useless. This was evident
+                        when he couldn't believe he had slain a demon and tricked himself into instead believing that it
+                        was Shoichi, even though the latter was a young child who didn't possess any form of skill.[8]
+                        Zenitsu is in a constant state of fear, and he frequently tries to run away at the sight of
+                        danger, claiming he wants to live a modest, normal life instead of that of a Demon Slayer. Due
+                        to this, Zenitsu screams and shouts a lot, much to the annoyance of the people around him. He is
+                        also shown to be pessimistic at times, especially during Hashira Training, where he lashed out
+                        at Tanjiro and Inosuke for viewing the training positively.
+                        <br>
+                        In spite of his weaknesses, Zenitsu desires to live up to the expectations others have set for
+                        him and will try his hardest when he needs to. He holds great respect and admiration for his
+                        comrades and his deceased teacher, Jigoro Kuwajima, and his inner focus and drive to avenge him
+                        help to wash away his cowardice and second thoughts when he is in a pinch. Zenitsu also hates
+                        himself for how cowardly and incompetent he is, despite genuinely striving to better himself.
+
+                        Zenitsu's blatant crush on Nezuko.
+                        Zenitsu's blatant crush on Nezuko.
+                        <br>
+                        Zenitsu is also shown to be something of a wannabe womanizer, stemming from a desire to not be
+                        single should he be killed. He appears to be severely needy for affection and approval by other
+                        people, traits which can be traced back to his younger years as a lonely orphan who was
+                        exploited emotionally and financially by his former partners. Such desire influences him to hit
+                        on girls who he thinks are cute and asks them to marry him or wants them to care about him, much
+                        to their annoyance.[9] He is shown to have perverted traits at times, evidently when he
+                        confronts Tanjiro and Inosuke during Rehabilitation Training where he draws attention to a
+                        girl’s physical features. This womanizing nature is shown to override his docile and quiet
+                        personality, particularly when he believes his comrades are "flirting" with cute girls; he would
+                        snap and go on long hysterical rants and complaints. Zenitsu is shown to have a strong
+                        attraction to Nezuko, openly expressing his affection for her and always rushing to protect her
+                        as if on instinct. During these times, he is also shown to become physically aggressive, lashing
+                        out at people in frustration.[10] Though, despite his shallow behaviour in this regard, Zenitsu
+                        does show respect for women, telling Daki to let go of a girl that Daki nearly tore the ear off
+                        of and later demanding that she apologize, showing no fear at all in front of the enraged Upper
+                        Rank demon.
+                        <br>
+                        Despite his loud personality around others, Zenitsu has shown steadfast loyalty towards his
+                        friends and people who treat him with kindness. Throughout the story, Zenitsu remains a loyal
+                        companion to Tanjiro and Inosuke; although the two frequently quarrel, Zenitsu reveals to care
+                        about Inosuke's wellbeing in moments such attempting to cheer him up after the mission the Mount
+                        Natagumo and during the aftermath of Daki's fight. His loyalty to Tanjiro is revealed in the
+                        same day as they met when he shares his onigiri with him and when he sacrifices his own body's
+                        safety to protect Nezuko's box, as well as during Hashira Training when he overcame his fears to
+                        follow Tanjiro's orders to evacuate Genya from his brother's patio. His undying loyalty is best
+                        shown towards his late master, as Zenitsu overcame his fears during his time inside the Infinity
+                        Castle to fight Kaigaku in order to avenge his master's death. Such loyalty is even shown
+                        towards the aforementioned Kaigaku, when he confronted fellow Slayers after he heard them
+                        slandering his former companion during their days as Demon Slayers in training.
+                        <br>
+                        In spite of his cowardly demeanour and somewhat pathetic attempts to gain the attention of
+                        women, he has shown level-headedness on rare occasions, becoming annoyed by his comrades'
+                        shenanigans, such as Tanjiro's kind naivety, Inosuke's bombastic personality, Kyojuro's
+                        boisterous and loud character, and Tengen's self-glorifying proclamations. As such, he typically
+                        squabbles with Inosuke when the latter goes on with his loud demands and boasts. Additionally,
+                        as the only one to have grown up in the city, Zenitsu is the most street-smart of the trio,
+                        being the most familiar with urban environments and Japan's industrialization. As such, he
+                        became frustrated with his partners' lack of understanding, namely Tanjiro and Inosuke's
+                        inability to recognize a train.
+                    </p>
+                </div>
+            </div>
+
+            <div id="tomioka" class="character">
+                <div>
+
+                    <h1>GIYU TOMIOKA</h1>
+
+                    <p>
+                        Appearance
+                        Giyu is a fairly tall young man of a lean muscular stature and pale complexion, who is almost
+                        always seen wearing a stoic expression. He has choppy raven-black hair of uneven lengths, with
+                        jaw length side-bangs, a low messy ponytail at the base of his neck, and bangs falling over his
+                        eyes in a choppy fringe. His eyes are sharp and moderately large, having irises that are a lapis
+                        blue color, fading into a lighter blue color at the lower part of the irises, and navy blue
+                        pupils. His irises are sometimes completely opaque and empty, just in lapis blue color, and are
+                        framed by thin eyebrows.
+                        <br>
+                        Giyu wears the standard Demon Slayer Corps uniform, colored black in the manga and tinted
+                        charcoal blue in the anime. It consists of a button-up jacket with a stand-up collar and long
+                        sleeves, featuring gold buttons and a shirt pocket on the left breast, with the kanji for
+                        Destroy (滅めつ Metsu?) engraved on the back of the uniform. Beneath the jacket, he wears a white
+                        long-sleeved collared undershirt. The uniform is fastened at the waist with a white belt and
+                        includes a pair of matching tattsuke-hakama pants, which are wrapped at the calves with buttoned
+                        white kyahan. On his feet, he wears tabi socks that match the charcoal blue tone of his uniform,
+                        along with white zōri sandals with navy blue straps. Over this, Giyu wears a distinctive haori
+                        that is split down the middle into two contrasting halves: the right half being a carmine color,
+                        the left half decorated in a traditional geometrically patterned rhombi - consisting of green,
+                        dark green, orange, and yellow. These haori halves are sentimental mementos, with the red side
+                        formerly belonging to his late older sister, Tsutako Tomioka, and the patterned side to his
+                        deceased friend and fellow apprentice, Sabito.[6]
+                        <br>
+                        During his battle with Muzan Kibutsuji, he loses his right arm.[7] After the fight, Giyu cuts
+                        his hair down to neck length, and he is seen wearing a button-up collared shirt under a kimono,
+                        and umanori hakama pants.[8]
+                        <br>
+                        While Giyu was training under Sakonji Urokodaki, he wore a dark red haori which would later make
+                        up his current one as well as black tucked-in tattsuke-hakama pants and his current white
+                        leg-wrapped kyahan and pair of white zōri with dark blue straps. In addition, he also wears the
+                        warding masks that are signature to Sakonji's pupils. For Giyu, it is a white fox mask with
+                        light blue eyes.
+                    </p>
+                </div>
+            </div>
+
+            <div id="inosuke" class="character">
+                <div>
+                    <h1>INOSUKE</h1>
+                    <p>
+                        Inosuke is a young man of average height and pale skin complexion with an extremely toned and
+                        muscular build for his age. In sharp contrast to this, he has an incredibly pretty and feminine
+                        face,[4] which made Zenitsu almost believe that he was a girl. He has large, wide eyes that are
+                        framed by an array of long eyelashes, their iris a dark to soft pale green with black pupils
+                        that has a small, white dot on the center of the pupils, thin eyebrows, and what could be a
+                        small, well-mannered mouth. His thick, raven-black hair reaches just past his shoulders, fading
+                        into blue at the tips and forming an unruly and uneven fringe that falls just above his eyes,
+                        puffing out before curving and thinning towards his forehead.
+                        <br>
+                        Inosuke, in his unique fashion, has customized his Demon Slayer uniform to suit his personal
+                        style. His altered attire consists of baggy hakama pants in a dark gray-blue shade, secured at
+                        his hips with a thick belt adorned with fluffy brown deer fur.[5] Unlike his fellow companions,
+                        Inosuke forgoes wearing a haori. Instead of the customary leg wraps, he opts for knee-high socks
+                        made from bear hide in a black color tone,[5] which serve as a base for the sandals he wears.
+                        Notably, his heels and toes are left exposed. However, the most distinctive aspect of his
+                        appearance is the gray, hollowed-out boar's head that he wears as a mask, with sky blue eyes
+                        with darker blue irises and black pupils, a pink snout, and a shade of pink on both of the upper
+                        portion of the ears. Inosuke has modified the boar's head, altering the eyes to allow him to see
+                        while wearing it.[6]
+                        <br>
+                        Repetitive Action: A technique practiced by a few members of the Corps, it allows a person to
+                        achieve the same effects as Total Concentration Breathing by using repeating pre-set movements
+                        or remembering intense feelings to open the five senses and raise their concentration, drawing
+                        out the physical powers of the body for a long, extended period of time. It is possible to use
+                        both Repetitive Action and Total Concentration Breathing simultaneously, granting the user
+                        immense strength to rival Upper Rank demons. Inosuke quickly mastered this technique after
+                        watching Tanjiro, and he likes to rephrase "Boar Rush!" while doing so.
+                    </p>
+
+                </div>
+            </div>
+
+            <div id="yorichi" class="character">
+                <div>
+                    <h1>Yoriichi Tsugikuni
+                    </h1>
+                    <p>
+                        Yoriichi was a tall man with a lean, muscular build, fair skin, and maroon eyes. He had long and
+                        wavy hair with red tips that he kept in a ponytail, along with shorter bangs that frame both
+                        side of his face. He had a similar overall appearance to his twin brother Michikatsu, but unlike
+                        him, he was slightly more slender, had shorter bangs, and wavier hair than him. Yoriichi was
+                        mostly expressionless, though sometimes a little solemn and aloof. As the first person who
+                        gained the Demon Slayer Mark, he had a blood red flame-like patterns on his left forehead and
+                        extends to his left temple.
+                        <br>
+                        Yoriichi wore a red haori over a very pale orange-colored nagagi kimono with a black
+                        umanori-styled hakama tied with a white uwa-obi, a pair of zōri with red straps and white tabi
+                        socks, with a Nichirin Sword carried at the left side of his waist, conventional to most Demon
+                        Slayers. He sported hanafuda earrings created by his mother as charms when he was thought to be
+                        deaf; he later gave them to his friend Sumiyoshi Kamado, who then passed the earrings down to
+                        his descendants and eventually Tanjiro as well.
+                        <br>
+                        As a child, Yoriichi's hair was untied and reached his shoulders. Due to his perceived lesser
+                        worth growing up, his attire was simple compared to Michikatsu's more ornate wear, being only a
+                        red haori with a pale orange obi.
+                        <br>
+                        On the last day of his life, Yoriichi maintained the same attire he wore throughout adulthood,
+                        but his spiky black hair became spindly and white, and he gained several wrinkles and white
+                        bushy eyebrows. In addition, although he still had his pupils, they were obscured with only his
+                        scleras being visible most of the time.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
