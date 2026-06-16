@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component</title>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.23.2/babel.min.js"></script>
+
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <script type="text/babel">
+
+        class Hello extends React.Component {
+
+            render() {
+
+                return (
+                    <h1>Hello everyone! {this.props.name || "Krutika"} {"Sharma"} </h1>
+                );
+
+            }
+
+        }
+
+
+        class Bye extends React.Component {
+
+            render() {
+
+                return (
+                    <h3>
+                        Byee!
+                    </h3>
+                );
+
+            }
+
+        }
+
+        class App extends React.Component {
+
+            render() {
+                return (
+                    <div>
+                        <Hello name="Krishna" />
+                        <Hello name="Kiran" />
+                        <Hello name="Liala" />
+                        <Hello name="Ken" />
+                        <Hello />
+                        <Bye name="Josh" />
+                    </div>
+                );
+
+            }
+
+        }
+
+        ReactDOM.render(<App />, document.querySelector('#hello'));
+
+    </script>
+</body>
+
+</html>

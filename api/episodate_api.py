@@ -2,7 +2,7 @@ import requests
 from datetime import date, datetime
 base = "https://www.episodate.com/api"
 
-shoe = "2gether the series"
+shoe = "ticket to heaven"
 
 url = f"{base}/search"
 
@@ -22,7 +22,7 @@ if response.status_code == 200:
     thumbnail_img = tv_show["image_thumbnail_path"]
     print(thumbnail_img)
     
-    season = 2
+    season = 1
         
     response = requests.get(
         url,
@@ -37,11 +37,13 @@ if response.status_code == 200:
         max_season = 0
         if tv_show["status"] == "Running":
             for ep in episodes:
+                print(season)
                 if ep["season"] == season:
                     date = ep["air_date"]
                     date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
                     ep_date = date.date()
                     if ep_date > date.today().date():
+                        print(ep["episode"])
                         next_ep_release_date = ep_date
                         next_ep_no = ep["episode"]
                         last_released_ep = next_ep_no - 1
@@ -77,5 +79,6 @@ if response.status_code == 200:
             total_ep = None
         
         print(max_season)
-        print(f"last released {last_released_ep}")
-        print(f"next rel date{next_ep_release_date}")
+        print(tv_show["status"])
+        print(last_released_ep)
+        print(next_ep_no)
